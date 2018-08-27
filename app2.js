@@ -123,8 +123,11 @@ function Lecture(studyGroup, theme, dLecture, cntCrystal) {
 		if (visits >= CNT_BONUS_VISITS) {
 			statItem.cntCrystal += CNT_BONUS_CRYSTAL;
 			statItem.isBonusAdded = true;
-			console.log('Добавлено бонусных кристалов ' + CNT_BONUS_CRYSTAL +
-				' за цепочку ' + visits);
+			console.log('Добавлено бонусных кристалов ' + CNT_BONUS_CRYSTAL + ' за ' +
+				visits + ' посещений без пропуска');
+		} else {
+			statItem.cntCrystal += 1;
+			console.log('Добавлено бонусных кристалов ' + 1 + ' за посещение');
 		}
 	}
 	this.addCrystal = function(index, value) {
